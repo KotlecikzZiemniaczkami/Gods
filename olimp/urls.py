@@ -7,6 +7,7 @@ from . import views
 # should be executed when it is triggered
 urlpatterns = [
     path("<int:ask>", views.god_hierarchy),
-    path("<str:ask>", views.god_says)
+    path("<str:ask>", views.god_says, name = "god-says"),
+    path("", views.accessible_gods)
 ]
 # now there is created sth called "url config"
