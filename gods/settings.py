@@ -30,7 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# if you want Django to find what you have made add your app here
 INSTALLED_APPS = [
+    "olimp",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -54,7 +56,9 @@ ROOT_URLCONF = "gods.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            # BASE_DIR / "olimp" / "templates"
+        ], #registering the templates. You should do this if you want to send anything from templates... Or You can add your app higher in code
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

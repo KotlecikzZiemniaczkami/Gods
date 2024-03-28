@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+# "in Django you can't just read template. You should convert it into string" this is for what you want render_to_string in your code
+from django.template.loader import render_to_string
 
 # answers given by gods
 god_answers = {
@@ -15,7 +17,7 @@ def accessible_gods(request):
     httext = ''
     a_gods = list(god_answers.keys())
     for i in range(len(a_gods)):
-        httext = httext + str(i) + '.' + f'<a href="{reverse("god-says", args=[a_gods[i]])}">' + a_gods[i] + "</a><br>"
+        httext = httext + str(i+1) + '.' + f'<a href="{reverse("god-says", args=[a_gods[i]])}">' + a_gods[i].capitalize() + "</a><br>"
     return HttpResponse(httext)
 
 # mihological redirection
@@ -30,7 +32,7 @@ def god_hierarchy(request, ask):
 # god has spoken ;]
 def god_says(request, ask):
     try:
-        return HttpResponse(f"<h1>{god_answers[ask]}</h1>")
+        return HttpResponse(render_to_string("olimp/gods_reaction.html"))
     # or not
     except:
         return HttpResponseNotFound("404\ngod not found")
