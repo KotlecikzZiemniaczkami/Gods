@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose</title>
+</head>
+<body style="background-color: red; text-align: center;">
+    <h1>whose advice do You wanna read?</h1>
+    <ul>
+        <!--for loop tag. It will print our list in nice way-->
+        {% for god in choose %}
+            <li><a href="" style="font-size: 20px;">{{god|title}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
