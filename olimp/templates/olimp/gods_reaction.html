@@ -6,8 +6,15 @@
     <title>{{ god_name }}'s advice</title>
 </head>
 <body style="background-color: {{ color }}; text-align: center;">
-    <h1>{{ god_name }}'s advice: {{ text }} </h1>
-    <h2>for sure</h2>
-    <h3>It would be great</h3>
+    <!--Thanks to tags we can use if statements i html docs-->
+    {%if text is not none%}
+        <h1>{{ god_name }}'s advice: {{ text }} </h1>
+        <h2>for sure</h2>
+        <h3>It would be great</h3>
+    {%else%}
+        <h1>This one has nothing to say to you</h1>
+    {%endif%}
+    
+    
 </body>
 </html>

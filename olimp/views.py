@@ -9,12 +9,12 @@ god_answers = {
     "hera": ["gimme tea",  	"#FFFF00"],
     "athena": ["wanna play chess?", "#00CED1"],
     "antena": ["you have fu*kn project to do!", "#A9A9A9"],
-    "artemis": ["Do you want to relax by the fireplace? I have roasted wild boar", "#228B22"]
+    "artemis": ["Do you want to relax by the fireplace? I have roasted wild boar", "#228B22"],
+    "Andzej": [None, "green"]
 }
 
 
 def accessible_gods(request):
-    httext = ''
     a_gods = list(god_answers.keys())
     
     return render(request, "olimp/choose_your_god.html", {"choose": a_gods})

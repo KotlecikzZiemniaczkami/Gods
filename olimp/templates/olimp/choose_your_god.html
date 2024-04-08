@@ -9,8 +9,11 @@
     <h1>whose advice do You wanna read?</h1>
     <ul>
         <!--for loop tag. It will print our list in nice way-->
+        <!--Thanks to this list will be dynamic-->
+        <!--links should work-->
         {% for god in choose %}
-            <li><a href="" style="font-size: 20px;">{{god|title}}</a></li>
+            <!--url tag makes link more dynamic-now you don't need to specify the path in html document-->
+            <li><a href="{%url "god-says" ask=god %}" style="font-size: 20px;">{{god|title}}</a></li>
         {% endfor %}
     </ul>
 </body>
